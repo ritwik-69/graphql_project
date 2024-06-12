@@ -7,7 +7,6 @@ import session from "express-session";
 import connectMongo from "connect-mongodb-session";
 
 import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import { buildContext } from "graphql-passport";
@@ -17,6 +16,7 @@ import mergedTypeDefs from "./typeDefs/index.js";
 import { connectDB } from "./db/connectDB.js";
 import { configurePassport } from "./passport/passport.config.js";
 dotenv.config();
+configurePassport();
 
 const app = express();
 const httpServer = http.createServer(app);
