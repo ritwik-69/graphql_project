@@ -12,8 +12,8 @@ const Cards = () => {
 			userId: authUser?.authUser?._id,
 		},
 	});
-
 	console.log("userAndTransactions:", userAndTransactions);
+
 
 	console.log("cards:", data);
 
